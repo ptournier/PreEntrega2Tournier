@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer message="Bienvenidos al carrito de compras"/>
+      <ItemListContainer message="Bienvenidos al carrito de compras" />
     </>
   );
 }

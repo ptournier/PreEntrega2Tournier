@@ -4,7 +4,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-#root {
+.center-content {
     display: flex;
     justify-content: center;
     align-items: center;

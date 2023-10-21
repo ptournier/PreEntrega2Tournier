@@ -8,9 +8,9 @@ function NavBar() {
         <a className="navbar-brand" href="#">
           RegalosYa.com
         </a>
-        <NavBarMenu/>
-        <CartWidget/>
-        </div>
+        <NavBarMenu />
+        <CartWidget />
+      </div>
     </header>
   );
 }
