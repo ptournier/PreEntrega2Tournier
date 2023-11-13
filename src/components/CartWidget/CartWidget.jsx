@@ -1,4 +1,4 @@
-function CartWidget() {
+const CartWidget = () => {
   return (
     <div className="d-flex align-items-center">
       <img
@@ -11,6 +11,6 @@ function CartWidget() {
       <span className="badge badge-light">5</span>
     </div>
   );
-}
+};
 
 export default CartWidget;

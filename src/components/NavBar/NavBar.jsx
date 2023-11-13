@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import NavBarMenu from "../NavBarMenu/NavBarMenu";
 
-function NavBar() {
+const NavBar = () => {
   return (
     <header className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to={"/"}>
           RegalosYa.com
-        </a>
+        </Link>
         <NavBarMenu />
         <CartWidget />
       </div>
