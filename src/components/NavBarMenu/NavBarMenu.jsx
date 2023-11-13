@@ -1,4 +1,4 @@
-import NavBarMenuItem from "../NavBarMenuItem/NavBarMenuItem";
+import { NavLink } from "react-router-dom";
 
 const NavBarMenu = () => {
   return (
@@ -16,10 +16,26 @@ const NavBarMenu = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
-          <NavBarMenuItem name="Inicio" href="/" />
-          <NavBarMenuItem name="Calzado" href="/category/1" />
-          <NavBarMenuItem name="Ropa" href="/category/2" />
-          <NavBarMenuItem name="Electrodomesticos" href="/category/3" />
+          <li className="nav-item">
+            <NavLink className="nav-link" to={"/"}>
+              Inicio
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to={"/category/1"}>
+            Calzado
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to={"/category/2"}>
+              Ropa
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to={"/category/3"}>
+            Electrodomesticos
+            </NavLink>
+          </li>
         </ul>
       </div>
     </>
