@@ -14,6 +14,8 @@ const ItemDetailContainer = () => {
     stock: 0,
   });
 
+  const [count, setCount] = useState(0);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,6 +27,21 @@ const ItemDetailContainer = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  const canAddElements = product.stock > count ? true : false;
+  const canRemoveElements = count > 0 ? true : false;
+  
+  function handleAddElements() {
+    if (canAddElements) {
+      setCount(count + 1);
+    }
+  }
+
+  function handleRemoveElements() {
+    if (canRemoveElements) {
+      setCount(count - 1);
+    }
+  }
 
   return (
     <div className="container mt-4">
@@ -45,6 +62,7 @@ const ItemDetailContainer = () => {
                 className="btn btn-outline-secondary"
                 type="button"
                 id="botonRestar"
+                onClick={handleRemoveElements}
               >
                 -
               </button>
@@ -55,12 +73,14 @@ const ItemDetailContainer = () => {
               placeholder="Cantidad"
               aria-label="Cantidad"
               aria-describedby="botonRestar botonSumar"
+              value={count}
             />
             <div className="input-group-append">
               <button
                 className="btn btn-outline-secondary"
                 type="button"
                 id="botonSumar"
+                onClick={handleAddElements}
               >
                 +
               </button>
