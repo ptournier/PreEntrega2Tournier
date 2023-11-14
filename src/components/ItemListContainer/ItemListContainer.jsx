@@ -10,25 +10,19 @@ const ItemListContainer = () => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    
-    if (!categoryId) {
-      getProducts()
-        .then((resp) => {
-          {
-            setProducts(resp);
-          }
-        })
-        .catch((error) => console.log(error));
-    } else {
-      getProductsByCategory(categoryId)
-        .then((resp) => {
-          {
-            setProducts(resp);
-          }
-        })
-        .catch((error) => console.log(error));
+    getProductsFromDb();
+  }, [categoryId]);
+
+  const getProductsFromDb = async () => {
+    try {
+      const dbProds = categoryId
+        ? await getProductsByCategory(categoryId)
+        : await getProducts();
+      setProducts(dbProds);
+    } catch (error) {
+      console.error(error);
     }
-  }, []);
+  };
 
   return (
     <div className="container mt-4 ">
